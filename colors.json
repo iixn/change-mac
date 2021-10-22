@@ -1,0 +1,11 @@
+{
+    "black" : "33[30m",
+    "red" : "33[31m",
+    "green" : "33[32m",
+    "yellow" : "33[33m",
+    "blue" : "33[34m",
+    "magenta" : "33[35m",
+    "cyan" : "33[36m",
+    "white" : "33[37m",
+    "reset" : "33[39m black = 33[30m"
+}
