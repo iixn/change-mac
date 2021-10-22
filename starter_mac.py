@@ -57,12 +57,22 @@ def Change_mac():
     logo()
     preguntar_nueva_direccion_mac = input('''\t\033[1;33mUr new mac-address must be like this = xx:xx:xx:xx:xx:xx (else the program won't work as you want)\n\n\t\033[1;33mIntroduce the new mac address : ''')
     
-    def change_mac_address():
-        os.system("sudo ifconfig eth0 down")
-        os.system("sudo ifconfig eth0 hw ether {}".__format__(preguntar_nueva_direccion_mac))
-        os.system("sudo ifconfig eth0 up")
-
-
+    def get_arguments(): ...
+    def change_mac(interface, new_mac): ...
+    def get_current_mac(interface): ...
+        
+    options_mac = get_arguments()
+    current_mac = get_current_mac(options.interface)
+    print("Current Mac : {}".format(current_mac))
+    
+    change_mac(options.interface, options.new_mac)
+    
+    current_mac = get_current_mac(options.interface)
+    if current_mac == options.new_mac:
+        print("[+] changed correctly to : {}".format(current_mac))
+    else:
+        print("[-] has not been changed :(")
+    
     pregunta = input('''   \n\033[1;33m¿Desea hacer algo más? [S/N] : ''')
     if pregunta == "s" or pregunta == "S":
         opciones()
