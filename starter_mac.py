@@ -56,8 +56,6 @@ def Change_mac():
     os.system("clear")
     logo()
     preguntar_nueva_direccion_mac = int(input('''\t\033[1;33mUr new mac-address must be like this = xx:xx:xx:xx:xx:xx (else the program won't work as you want'''))
-    
-    \t\033[1;33mIntroduce ur new mac address : ''')
     def change_mac_address():
         os.system("sudo ifconfig eth0 down")
         os.system("sudo ifconfig eth0 hw ether {}".__format__(preguntar_nueva_direccion_mac))
