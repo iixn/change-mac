@@ -19,5 +19,5 @@ git clone https://github.com/iixn/change-mac.git
 # Starter 
 ```sh
 cd change-mac
-./starter.sh
+bash starter.sh
 ```
