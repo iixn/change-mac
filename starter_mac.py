@@ -57,10 +57,9 @@ def Change_mac():
     logo()
     preguntar_nueva_direccion_mac = input('''\t\033[1;33mUr new mac-address must be like this = xx:xx:xx:xx:xx:xx (else the program won't work as you want)\n\n\t\033[1;33mIntroduce the new mac address : ''')
     
-    os.sys("ifconfig eth0 down")
-    os.sys("ifconfig eth0 hw ether" + preguntar_nueva_direccion_mac)
-    os.sys("ifconfig eth0 up")
-    os.sys("/etc/init.d/networking restart")
+    subprocess.call(["ifconfig", interface, "down"])
+    subprocess.call(["ifconfig", interface, "hw", "ether", preguntar_nueva_direccion_mac])
+    subprocess.call(["ifconfig", interface, "up"])
     
     pregunta = input('''   \n\033[1;33m¿Desea hacer algo más? [S/N] : ''')
     if pregunta == "s" or pregunta == "S":
