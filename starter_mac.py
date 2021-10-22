@@ -61,7 +61,7 @@ def Change_mac():
     def change_mac(interface, new_mac): ...
     def get_current_mac(interface): ...
         
-    options_mac = get_arguments()
+    options = get_arguments()
     current_mac = get_current_mac(options.interface)
     print("Current Mac : {}".format(current_mac))
     
