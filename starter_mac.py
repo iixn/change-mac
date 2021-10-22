@@ -55,7 +55,7 @@ def opciones():
 def Change_mac():
     os.system("clear")
     logo()
-    preguntar_nueva_direccion_mac = input('''\t\033[1;33mUr new mac-address must be like this = xx:xx:xx:xx:xx:xx (else the program won't work as you want)\n\n\t\033[1;33mIntroduce the new mac address : ''')
+    preguntar_nueva_direccion_mac = input('''\t\033[1;33m-Ur new mac-address must be like this = xx:xx:xx:xx:xx:xx (else the program won't work as you want)\n\t\033[1;33mThe first number must be pair\n\t\033[1;33mThe program will need your password to continue\n\t\033[1;33mIntroduce the new mac address > ''')
     
     subprocess.call(["sudo", "ifconfig", "eth0", "down"])
     subprocess.call(["sudo", "ifconfig", "eth0", "hw", "ether", preguntar_nueva_direccion_mac])
